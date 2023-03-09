@@ -1,3 +1,5 @@
+from guizero import Picture
+
 """
 The GuiFrameManager Object is responsible for iterating across multiple UI
 Widgets and activating the current widget while hiding all others.
@@ -19,7 +21,13 @@ def bury_element(element):
     element.disable()
 
 
+def load_image_as_gui(main_App, full_file_path: str = None):
+    picture_element = Picture(main_App, full_file_path)
+    return picture_element
+
+
 class GuiFrameManager:
+
     def __init__(self, gui_stack=list()):
         self.gui_stack = gui_stack
         self.current_index = 0
