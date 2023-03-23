@@ -1,20 +1,20 @@
-from guizero import App, Text, PushButton, Box
+from guizero import App, Text, PushButton, Box, Picture
 
 from GuiFrameManager.GuiFrameManager import GuiFrameManager
 
 
-def experimental_main(main_app):
+def experimental_main(main_app, image_files):
     # Creates 4 Box container UI Elements that will be rendered on the main_app
     welcome_container = Box(main_app, width=200, height=350, border=3)
-    testing_container = Box(main_app,  width=200, height=350, border=10)
-    results_container = Box(main_app,  width=200, height=350, border=15)
-    export_container = Box(main_app,  width=300, height=350, border=3)
+    testing_container = Box(main_app, width=200, height=350, border=10)
+    results_container = Box(main_app, width=200, height=350, border=15)
+    export_container = Box(main_app, width=300, height=350, border=3)
 
     # A text box is then added to all the various Box Containers
-    box1text = Text(welcome_container, text="Welcome to the HomePage")
-    box2text = Text(testing_container, text="Testing will begin")
-    box3text = Text(results_container, text="Results are Ready")
-    box4text = Text(export_container, text="Where do you wanna export data to")
+    box1text = Picture(welcome_container, image=image_files[0])
+    box2text = Picture(testing_container, image=image_files[1])
+    box3text = Picture(results_container, image=image_files[2])
+    box4text = Picture(export_container, image=image_files[3])
 
     # The box containers are then compiled together into a list
     widget_stack = [welcome_container, testing_container, results_container, export_container]
