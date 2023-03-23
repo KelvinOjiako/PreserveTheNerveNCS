@@ -1,4 +1,5 @@
 from guizero import Picture
+import os
 
 
 def experimental_image(main_container):
@@ -8,6 +9,6 @@ def experimental_image(main_container):
     pictues = ["startTest.PNG", "snapSetup.png", "snapSetup_WristStrap.png",
                "snapSetup_writStrap_3.png", "shockPrompt.png"]
 
-    intro = path_full  + "\luffy_gif_test.png"
+    intro = os.path.join(path_full, pictues[0])
 
     Picture(main_container, image=intro)
