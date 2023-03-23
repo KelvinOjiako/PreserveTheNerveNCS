@@ -1,6 +1,17 @@
 from guizero import App, Text, PushButton, Box, Picture
 
 from GuiFrameManager.GuiFrameManager import GuiFrameManager
+import os
+
+
+def image_file_setup():
+    full_path = r"C:\Users\kojia\PycharmProjects\PreserveTheNerveNCS\Images"
+    image_list = ["luffy_gif_test.gif", "1.GIF", "2.GIF", "1_1.GIF", "3.GIF", "3_1.GIF"]
+    perfect_images = []
+
+    for i in image_list:
+        perfect_images.append(os.path.join(full_path, i))
+    return perfect_images
 
 
 def experimental_main(main_app, image_files):
@@ -22,6 +33,7 @@ def experimental_main(main_app, image_files):
     manager_object = GuiFrameManager(widget_stack)
     manager_object.deactivate_all_elements()
     print(manager_object.size)
+    manager_object.activate_current_element()
     return manager_object
 
 

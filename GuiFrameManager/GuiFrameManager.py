@@ -60,7 +60,7 @@ class GuiFrameManager:
         if self.empty():
             print("Error!! An empty StackFrame CANT activate any elements")
         else:
-            if self.current_index - 1 >= 0:  # Ensures there's a previous element
+            if self.current_index > 0:  # Ensures there's a previous element
                 if 0 <= self.current_index < self.size:  # checks if current index is in correct range
                     bury_element(self.gui_stack[self.current_index])  # Hides current element
                     self.current_index -= 1  # moves to the previous element
@@ -72,7 +72,7 @@ class GuiFrameManager:
         if self.empty():
             print("Error!! An empty StackFrame CANT activate any elements")
         else:
-            if self.current_index + 1 <= self.size:
+            if self.current_index < self.size:
                 # checks if there is a next element
                 if 0 <= self.current_index < self.size - 1:  # ensures current_index is in the right range
                     bury_element(self.gui_stack[self.current_index])  # Hides the current element
